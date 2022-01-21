@@ -331,3 +331,4 @@ C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Imag
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Details.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Edit.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Index.cshtml.g.cs
+C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Show.cshtml.g.cs

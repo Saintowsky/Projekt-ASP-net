@@ -1,4 +1,7 @@
-﻿@model Projekt_ASP.Models.ImageModel
+﻿@using Microsoft.AspNetCore.Identity
+@using Projekt_ASP.Areas.Identity.Data
+@model Projekt_ASP.Models.ImageModel
+@inject UserManager<ApplicationUser> UserManager
 
 @{
     ViewData["Title"] = "Create";
@@ -6,7 +9,7 @@
 
 <h1>Create</h1>
 
-<h4>ImageModel</h4>
+<h4>Post an Image</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,12 +22,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="ImageFile" class="control-label"></label>
-                <input asp-for="ImageFile" accept="image/*"/>
+                <input asp-for="ImageFile" accept="image/*" />
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label">Author</label>
+                <input asp-for="Author" readonly class="form-control" value="@UserManager.GetUserName(User)">
+                <span asp-validation-for="Author" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+
         </form>
     </div>
 </div>

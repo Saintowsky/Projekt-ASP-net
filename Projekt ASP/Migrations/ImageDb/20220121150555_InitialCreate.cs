@@ -12,6 +12,7 @@ namespace Projekt_ASP.Migrations.ImageDb
                 {
                     ImageID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Author = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     ImageName = table.Column<string>(type: "nvarchar(100)", nullable: true)
                 },

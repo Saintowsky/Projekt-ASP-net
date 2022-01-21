@@ -46,6 +46,23 @@ namespace Projekt_ASP.Controllers
             return View(imageModel);
         }
 
+        public async Task<IActionResult> Show(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var imageModel = await _context.Images
+                .FirstOrDefaultAsync(m => m.ImageID == id);
+            if (imageModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(imageModel);
+        }
+
         // GET: Image/Create
         public IActionResult Create()
         {
@@ -57,7 +74,7 @@ namespace Projekt_ASP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ImageID,Title,ImageFile")] ImageModel imageModel)
+        public async Task<IActionResult> Create([Bind("ImageID,Author,Title,ImageFile")] ImageModel imageModel)
         {
             if (ModelState.IsValid)
             {
@@ -153,7 +170,15 @@ namespace Projekt_ASP.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+
             var imageModel = await _context.Images.FindAsync(id);
+
+            //Delete image from images folder
+            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "image", imageModel.ImageName);
+            if (System.IO.File.Exists(imagePath))
+                System.IO.File.Delete(imagePath);
+
+            //Delete the record
             _context.Images.Remove(imageModel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

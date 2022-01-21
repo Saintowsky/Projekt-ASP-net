@@ -14,6 +14,9 @@ namespace Projekt_ASP.Models
         [Key]
         public int ImageID { get; set; }
 
+        [Column(TypeName = "nvarchar(50)")]
+        public string Author { get; set; }
+
         [Column(TypeName ="nvarchar(50)")]
         public string Title { get; set; }
 

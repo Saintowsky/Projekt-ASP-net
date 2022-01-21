@@ -25,6 +25,9 @@ namespace Projekt_ASP.Migrations.ImageDb
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(100)");
 

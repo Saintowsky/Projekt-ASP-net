@@ -11,6 +11,9 @@ a.navbar-brand {
 a {
   color: #0366d6;
 }
+.post-image{
+    text-align: center
+}
 
 .btn-primary {
   color: #fff;
@@ -18,10 +21,14 @@ a {
   border-color: #1861ac;
 }
 
+.form-control[readonly]{
+    background-color: white;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles

@@ -9,7 +9,7 @@ using Projekt_ASP.Models;
 namespace Projekt_ASP.Migrations.ImageDb
 {
     [DbContext(typeof(ImageDbContext))]
-    [Migration("20220121130901_InitialCreate")]
+    [Migration("20220121150555_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,6 +26,9 @@ namespace Projekt_ASP.Migrations.ImageDb
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(100)");
