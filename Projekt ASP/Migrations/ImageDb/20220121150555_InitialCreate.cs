@@ -14,7 +14,8 @@ namespace Projekt_ASP.Migrations.ImageDb
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Author = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(50)", nullable: true),
-                    ImageName = table.Column<string>(type: "nvarchar(100)", nullable: true)
+                    ImageName = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    Rating = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

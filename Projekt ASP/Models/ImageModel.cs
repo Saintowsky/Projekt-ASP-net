@@ -24,6 +24,13 @@ namespace Projekt_ASP.Models
         [DisplayName("Image Name")]
         public string ImageName { get; set; }
 
+        [Column(TypeName = "int")]
+        [DisplayName("Rating")]
+        public int Rating { get; set; }
+
+
+
+
         [NotMapped]
         [DisplayName("Upload File")]
         public IFormFile ImageFile { get; set; }

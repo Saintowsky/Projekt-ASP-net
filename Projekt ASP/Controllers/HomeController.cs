@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Projekt_ASP.Models;
@@ -24,6 +24,7 @@ namespace Projekt_ASP.Controllers
         {
             return View();
         }
+
 
         public IActionResult Privacy()
         {
