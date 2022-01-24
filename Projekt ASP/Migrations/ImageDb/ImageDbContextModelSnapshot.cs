@@ -31,6 +31,9 @@ namespace Projekt_ASP.Migrations.ImageDb
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(50)");
 

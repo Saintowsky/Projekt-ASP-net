@@ -9,7 +9,7 @@ using Projekt_ASP.Models;
 namespace Projekt_ASP.Migrations.ImageDb
 {
     [DbContext(typeof(ImageDbContext))]
-    [Migration("20220121150555_InitialCreate")]
+    [Migration("20220124155727_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace Projekt_ASP.Migrations.ImageDb
 
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(50)");

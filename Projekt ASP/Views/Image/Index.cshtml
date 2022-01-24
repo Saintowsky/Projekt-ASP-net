@@ -1,7 +1,11 @@
 ﻿@model IEnumerable<Projekt_ASP.Models.ImageModel>
+@using Microsoft.AspNetCore.Identity
+@using Projekt_ASP.Areas.Identity.Data
+@inject UserManager<ApplicationUser> UserManager
 
 @{
     ViewData["Title"] = "Pictures";
+
 }
 
 <h1>Pictures</h1>
@@ -22,27 +26,46 @@
                 Author
             </th>
             <th></th>
+            <th>
+                Rating
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-               
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
 
-                <a asp-action="Show" asp-route-id="@item.ImageID">Show</a> |
-                <a asp-action="Details" asp-route-id="@item.ImageID">Details</a>
-            </td>
-        </tr>
-}
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    <img src="@("~/image/" + item.ImageName)" asp-append-version="true" width="250" height="250" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+
+                    <a asp-action="Show" asp-route-id="@item.ImageID">Show</a> |
+                    <a asp-action="Details" asp-route-id="@item.ImageID">Details</a>
+                </td>
+                <td>
+                    <a>@Html.DisplayFor(modelItem => item.Rating)</a>
+                    @if (item.Author == @UserManager.GetUserName(User))
+                    {
+
+                        <img width="25px" height="25px" src="~/image/Love_Heart_SVG.svg" />
+                    }
+                    else
+                    {
+                        <a asp-action="Like" asp-route-id="@item.ImageID">
+                            <img width="25px" height="25px" src="~/image/Love_Heart_SVG.svg" />
+                        </a>
+                    }
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

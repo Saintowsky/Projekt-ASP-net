@@ -336,3 +336,4 @@ C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyIm
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Edit.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Index.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Show.cshtml.g.cs
+C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Like.cshtml.g.cs
