@@ -34,8 +34,6 @@ namespace Projekt_ASP.Controllers
             update.Rating += 1;
             _context.SaveChanges();
             return RedirectToAction("Index");
-
-
         }
 
         // GET: Image/Details/5

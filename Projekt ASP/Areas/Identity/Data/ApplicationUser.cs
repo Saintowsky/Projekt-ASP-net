@@ -18,5 +18,8 @@ namespace Projekt_ASP.Areas.Identity.Data
         [Column(TypeName = "nvarchar(100)")]
         public string LastName { get; set; }
 
+        [Column(TypeName = "int")]
+        public int IsAdmin { get; set; }
+
     }
 }

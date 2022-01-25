@@ -10,8 +10,8 @@ using Projekt_ASP.Data;
 namespace Projekt_ASP.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20220121113249_Initial-Create")]
-    partial class InitialCreate
+    [Migration("20220125141647_Initial-create")]
+    partial class Initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -177,6 +177,9 @@ namespace Projekt_ASP.Migrations
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("IsAdmin")
+                        .HasColumnType("int");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(100)");

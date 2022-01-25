@@ -16,6 +16,7 @@ namespace Projekt_ASP.Data
         {
         }
 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Projekt_ASP.Areas.Identity.Data
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{ 
+    var user = await UserManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,8 +21,12 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Projekt_ASP</a>
+                @if (SignInManager.IsSignedIn(User) && user.IsAdmin == 1)
+                {
+                    <a href='@Url.Action("index", "AdminPage")' class='images-button'>Admin Tools |</a>
+                }
 
-                <img src="~/image/868092079371350047.gif" height="25px" width="25px"/>
+                <img src="~/image/868092079371350047.gif" height="25px" width="25px" />
                 <a href='@Url.Action("index", "Image")' class='images-button'>Images</a>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial.cshtml" />

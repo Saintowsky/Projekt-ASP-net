@@ -176,6 +176,9 @@ namespace Projekt_ASP.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int>("IsAdmin")
+                        .HasColumnType("int");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(100)");
 
