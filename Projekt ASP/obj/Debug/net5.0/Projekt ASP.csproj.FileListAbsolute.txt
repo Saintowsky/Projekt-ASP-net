@@ -326,9 +326,7 @@ C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\ref\Projekt ASP.
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Projekt ASP.pdb
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Projekt ASP.genruntimeconfig.cache
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Create.cshtml.g.cs
-C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Delete.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Details.cshtml.g.cs
-C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Edit.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Index.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Show.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Delete.cshtml.g.cs

@@ -117,7 +117,7 @@ namespace Projekt_ASP.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ImageID,Title,ImageName")] ImageModel imageModel)
+        public async Task<IActionResult> Edit(int id, [Bind("ImageID,Title,ImageName,Author")] ImageModel imageModel)
         {
             if (id != imageModel.ImageID)
             {
