@@ -17,7 +17,7 @@
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImageName)
+                Image
             </th>
             <th>
                 Author
@@ -30,41 +30,30 @@
         {
 
             <tr>
-                @if (item.Author == @UserManager.GetUserName(User))
-                {
                     <td>
 
                         @Html.DisplayFor(modelItem => item.Title)
 
                     </td>
-                }
-                @if (item.Author == @UserManager.GetUserName(User))
-                {
                     <td>
 
-                        @Html.DisplayFor(modelItem => item.ImageName)
+                        <img src="@("~/image/" + item.ImageName)" asp-append-version="true" width="250" height="250" />
 
 
                     </td>
-                }
-                @if (item.Author == @UserManager.GetUserName(User))
-                {
                     <td>
 
                         @Html.DisplayFor(modelItem => item.Author)
 
 
                     </td>
-                }
-                @if (item.Author == @UserManager.GetUserName(User))
-                {
                     <td>
                         <a asp-action="Show" asp-route-id="@item.ImageID">Show</a> |
                         <a asp-action="Edit" asp-route-id="@item.ImageID">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.ImageID">Details</a> |
                         <a asp-action="Delete" asp-route-id="@item.ImageID">Delete</a>
                     </td>
-                }
+                
             </tr>
         }
     </tbody>

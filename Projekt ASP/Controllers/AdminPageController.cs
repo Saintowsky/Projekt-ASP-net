@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Projekt_ASP.Data;
 using Projekt_ASP.Models;
 
+
 namespace Projekt_ASP.Controllers
 {
     [Authorize]
@@ -27,12 +28,13 @@ namespace Projekt_ASP.Controllers
             this.___hostEnvironment = hostEnvironment;
         }
 
+
         public async Task<IActionResult> ShowPosts()
         {
             return View(await _context.Images.ToListAsync());
         }
 
-        public async Task<IActionResult> Details(string? id)
+        public async Task<IActionResult> UserDetails(string id)
         {
             if (id == null)
             {
@@ -53,7 +55,7 @@ namespace Projekt_ASP.Controllers
         {
             return View(await ___context.Users.ToListAsync());
         }
-        public async Task<IActionResult> DeleteUser(string? id)
+        public async Task<IActionResult> DeleteUser(string id)
         {
             if (id == null)
             {
@@ -78,7 +80,7 @@ namespace Projekt_ASP.Controllers
         // POST: Image/Delete/5
         [HttpPost, ActionName("DeleteUser")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> UserDeleteConfirmed(string id)
         {
 
             var ApplicationUser = await ___context.Users.FindAsync(id);
@@ -88,6 +90,9 @@ namespace Projekt_ASP.Controllers
             await ___context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+
+        // Images
 
         public async Task<IActionResult> Delete(int? id)
         {
@@ -122,7 +127,92 @@ namespace Projekt_ASP.Controllers
             //Delete the record
             _context.Images.Remove(imageModel);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(ShowPosts));
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var imageModel = await _context.Images
+                .FirstOrDefaultAsync(m => m.ImageID == id);
+            if (imageModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(imageModel);
+        }
+
+        public async Task<IActionResult> Show(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var imageModel = await _context.Images
+                .FirstOrDefaultAsync(m => m.ImageID == id);
+            if (imageModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(imageModel);
+        }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var imageModel = await _context.Images.FindAsync(id);
+            if (imageModel == null)
+            {
+                return NotFound();
+            }
+            return View(imageModel);
+        }
+
+        // POST: Image/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("ImageID,Title,ImageName,Author")] ImageModel imageModel)
+        {
+            if (id != imageModel.ImageID)
+            {
+                return NotFound();
+            }
+
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(imageModel);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ImageModelExists(imageModel.ImageID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(imageModel);
         }
 
     }

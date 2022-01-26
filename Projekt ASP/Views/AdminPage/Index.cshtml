@@ -42,12 +42,12 @@
                 <td>
                     @if (item.IsAdmin == 1)
                     {
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a><a> |</a>
+                        <a asp-action="UserDetails" asp-route-id="@item.Id">Details</a><a> |</a>
                         <a asp-action="ShowPosts" asp-route-id="@item.Id">Show Posts</a>
                     }
                     else
                     {
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a><a> |</a>
+                        <a asp-action="UserDetails" asp-route-id="@item.Id">Details</a><a> |</a>
                         <a asp-action="ShowPosts" asp-route-id="@item.Id">Show Posts</a><a> |</a>
                         <a asp-action="DeleteUser" asp-route-id="@item.Id">Delete</a>
 

@@ -5,6 +5,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+
 }
 
 <h1>Edit</h1>
@@ -23,8 +24,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="ImageName" class="control-label"></label>
-                <input asp-for="ImageName" class="form-control" />
+                <input asp-for="ImageName" readonly class="form-control" />
                 <span asp-validation-for="ImageName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" accept="image/*" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Author" class="control-label">Author</label>

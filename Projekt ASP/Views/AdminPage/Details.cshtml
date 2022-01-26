@@ -1,4 +1,4 @@
-﻿@model Projekt_ASP.Areas.Identity.Data.ApplicationUser;
+﻿@model Projekt_ASP.Models.ImageModel
 
 @{
     ViewData["Title"] = "Details";
@@ -11,32 +11,32 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayNameFor(model => model.Title)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Id)
+            @Html.DisplayFor(model => model.Title)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.ImageName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.ImageName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
+            Author
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
+            @Html.DisplayFor(model => model.Author)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UserName)
+            Uploaded Image
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UserName)
+            <img src="@("~/image/" + Model.ImageName)" asp-append-version="true" width="500px" height="500px" />
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.ImageID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

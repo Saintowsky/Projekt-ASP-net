@@ -17,7 +17,7 @@ namespace Projekt_ASP.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger;
+           _logger = logger;
         }
 
         public IActionResult Index()
