@@ -17,8 +17,10 @@ namespace Projekt_ASP.Models
         [Column(TypeName = "nvarchar(50)")]
         public string Author { get; set; }
 
+        [Required]
         [Column(TypeName ="nvarchar(50)")]
         public string Title { get; set; }
+
 
         [Column(TypeName = "nvarchar(100)")]
         [DisplayName("Image Name")]
@@ -30,7 +32,7 @@ namespace Projekt_ASP.Models
 
 
 
-
+        [Required]
         [NotMapped]
         [DisplayName("Upload File")]
         public IFormFile ImageFile { get; set; }
