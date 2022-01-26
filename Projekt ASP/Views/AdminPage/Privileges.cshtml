@@ -1,0 +1,53 @@
+﻿@model Projekt_ASP.Areas.Identity.Data.ApplicationUser;
+
+@{
+    ViewData["Title"] = "Details";
+    var UserId = Model.Id;
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>User Details</h4>
+    <form method="post">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+        </dl>
+
+        <a asp-action="GrantAdmin" asp-route-id="@UserId" class="form-control">
+            Grant Admin
+        </a>
+
+        <a asp-action="RevokeAdmin" asp-route-id="@UserId" class="form-control">
+            Revoke Admin
+        </a>
+
+
+    </form>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

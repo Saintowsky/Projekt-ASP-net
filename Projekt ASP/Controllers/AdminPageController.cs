@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Projekt_ASP.Areas.Identity.Data;
 using Projekt_ASP.Data;
 using Projekt_ASP.Models;
 
@@ -17,6 +19,8 @@ namespace Projekt_ASP.Controllers
     [Authorize]
     public class AdminPageController : Controller
     {
+        private readonly UserManager<ApplicationUser> userManager;
+
         private readonly ImageDbContext _context;
         private readonly AuthDbContext ___context;
         private readonly IWebHostEnvironment ___hostEnvironment;
@@ -76,7 +80,7 @@ namespace Projekt_ASP.Controllers
             return ___context.Users.Any(e => Convert.ToInt32(e.Id) == id);
         }
 
-        
+
         // POST: Image/Delete/5
         [HttpPost, ActionName("DeleteUser")]
         [ValidateAntiForgeryToken]
@@ -90,9 +94,6 @@ namespace Projekt_ASP.Controllers
             await ___context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-
-        // Images
 
         public async Task<IActionResult> Delete(int? id)
         {
@@ -146,6 +147,39 @@ namespace Projekt_ASP.Controllers
 
             return View(imageModel);
         }
+
+        public async Task<IActionResult> Privileges(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var ApplicationUser = await ___context.Users
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (ApplicationUser == null)
+            {
+                return NotFound();
+            }
+
+            return View(ApplicationUser);
+        }
+
+        public IActionResult GrantAdmin(string id)
+        {
+            ApplicationUser update = ___context.Users.ToList().Find(u => u.Id == id);
+            update.IsAdmin = 1;
+            ___context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult RevokeAdmin(string id)
+        {
+            ApplicationUser update = ___context.Users.ToList().Find(u => u.Id == id);
+            update.IsAdmin = 0;
+            ___context.SaveChanges();
+            return RedirectToAction("Index");
+        } 
 
         public async Task<IActionResult> Show(int? id)
         {

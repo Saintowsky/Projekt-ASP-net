@@ -40,16 +40,17 @@
                     @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td>
-                    @if (item.IsAdmin == 1)
+                    @if (item.IsAdmin == 2)
                     {
                         <a asp-action="UserDetails" asp-route-id="@item.Id">Details</a><a> |</a>
-                        <a asp-action="ShowPosts" asp-route-id="@item.Id">Show Posts</a>
+                        <a asp-action="Privileges" asp-route-id="@item.Id">Privileges</a>
                     }
                     else
                     {
                         <a asp-action="UserDetails" asp-route-id="@item.Id">Details</a><a> |</a>
-                        <a asp-action="ShowPosts" asp-route-id="@item.Id">Show Posts</a><a> |</a>
-                        <a asp-action="DeleteUser" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="DeleteUser" asp-route-id="@item.Id">Delete</a><a> |</a>
+                        <a asp-action="Privileges" asp-route-id="@item.Id">Privileges</a>
+
 
                     }
                 </td>

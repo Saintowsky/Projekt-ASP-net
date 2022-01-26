@@ -331,7 +331,6 @@ C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Imag
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Show.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Delete.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Details.cshtml.g.cs
-C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Edit.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Index.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\MyImages\Show.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Image\Like.cshtml.g.cs
@@ -375,5 +374,5 @@ C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Admi
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\Show.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\UserDetails.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\Details.cshtml.g.cs
-C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\Edit.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Projekt ASP.csprojAssemblyReference.cache
+C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\Privileges.cshtml.g.cs

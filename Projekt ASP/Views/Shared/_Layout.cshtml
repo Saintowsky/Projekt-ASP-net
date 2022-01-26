@@ -20,14 +20,19 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Projekt_ASP</a>
-                @if (SignInManager.IsSignedIn(User) && user.IsAdmin == 1)
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pupilownia</a>
+                @if (SignInManager.IsSignedIn(User) && user.IsAdmin == 2)
                 {
-                    <a href='@Url.Action("index", "AdminPage")' class='images-button'>Admin Tools |</a>
+            <a href='@Url.Action("index", "AdminPage")' class='images-button'>Users Admin Panel</a>
+            <a href='@Url.Action("ShowPosts", "AdminPage")' class='images-button'> ㅤ|ㅤPosts Admin Panelㅤ| </a>
                 }
 
+                
+            <a href='@Url.Action("index", "Image")' class='images-button'>
+                ㅤ
                 <img src="~/image/868092079371350047.gif" height="25px" width="25px" />
-                <a href='@Url.Action("index", "Image")' class='images-button'>Images</a>
+                Images
+            </a>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial.cshtml" />
                 </div>
