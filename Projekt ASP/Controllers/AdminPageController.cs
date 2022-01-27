@@ -19,7 +19,6 @@ namespace Projekt_ASP.Controllers
     [Authorize]
     public class AdminPageController : Controller
     {
-        private readonly UserManager<ApplicationUser> userManager;
 
         private readonly ImageDbContext _context;
         private readonly AuthDbContext ___context;

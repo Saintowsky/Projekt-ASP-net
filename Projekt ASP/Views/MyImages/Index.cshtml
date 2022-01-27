@@ -40,12 +40,12 @@
             }
             @if (item.Author == @UserManager.GetUserName(User))
             {
-                <td>
+        <td>
 
-                    @Html.DisplayFor(modelItem => item.ImageName)
+            <img src="@("~/image/" + item.ImageName)" asp-append-version="true" width="250px" height="250px" />
 
 
-                </td>
+        </td>
             }
             @if (item.Author == @UserManager.GetUserName(User))
             {

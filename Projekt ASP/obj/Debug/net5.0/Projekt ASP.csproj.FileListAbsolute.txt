@@ -374,5 +374,5 @@ C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\Admi
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\Show.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\UserDetails.cshtml.g.cs
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\Details.cshtml.g.cs
-C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Projekt ASP.csprojAssemblyReference.cache
 C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Razor\Views\AdminPage\Privileges.cshtml.g.cs
+C:\Users\user\source\repos\NewRepo\Projekt ASP\obj\Debug\net5.0\Projekt ASP.csprojAssemblyReference.cache

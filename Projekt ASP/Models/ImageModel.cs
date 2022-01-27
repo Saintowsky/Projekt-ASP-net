@@ -30,8 +30,6 @@ namespace Projekt_ASP.Models
         [DisplayName("Rating")]
         public int Rating { get; set; }
 
-
-
         [Required]
         [NotMapped]
         [DisplayName("Upload File")]

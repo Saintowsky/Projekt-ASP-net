@@ -65,38 +65,6 @@ namespace Projekt_ASP.Controllers
             return View(imageModel);
         }
 
-        // GET: Image/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Image/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ImageID,Author,Title,ImageFile")] ImageModel imageModel)
-        {
-            if (ModelState.IsValid)
-            {
-                //Saving image to wwwroot/image
-                string wwwRootPath = __hostEnvironment.WebRootPath;
-                string fileName = Path.GetFileNameWithoutExtension(imageModel.ImageFile.FileName);
-                string extension = Path.GetExtension(imageModel.ImageFile.FileName);
-                imageModel.ImageName = fileName = fileName + DateTime.Now.ToString("yymmssff") + extension;
-                string path = Path.Combine(wwwRootPath + "/image/", fileName);
-                using (var fileStream = new FileStream(path, FileMode.Create))
-                {
-                    await imageModel.ImageFile.CopyToAsync(fileStream);
-                }
-                // insert record
-                _context.Add(imageModel);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(imageModel);
-        }
 
         // GET: Image/Edit/5
         public async Task<IActionResult> Edit(int? id)
